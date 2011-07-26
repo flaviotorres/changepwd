@@ -2,9 +2,14 @@ Este programa foi desenvolvido para suprir a necessidade no gerenciamento da sen
 
 Seu funcionamento é simples:
 
-- Programa server.py é responsável por abrir o socket e aguardar por requisições do cliente
+- Programa server.py 
+	É responsável por abrir o socket e aguardar por requisições do cliente
 	a) Uma vez recebida a conexão e os parâmetros: senha servidor, o programa armazena estas informações em uma tabela do banco de dados encriptando a senha com algoritmo AES mais uma chave. Somente com esta chave é possivel reverter a criptografia para recuperar a senha.
 	b) O programa verifica se a informação recebida faz parte de uma rede válida
 	c) A transferência de dados é feita por socket SSL (TODO)
 
-- Programa chpass.py é responsável por gerar uma senha randômica para o usuário root, trocá-la e enviar a informação através do socket para o servidor realizar o update na tabela referente ao servidor correspondente.
+- Programa chpass.py 
+	É responsável por gerar uma senha randômica para o usuário root, trocá-la e enviar a informação através do socket para o servidor realizar o update na tabela referente ao servidor correspondente.
+
+- Programa single_chpasswd.py
+	A fim de evitar o uso de um servidor socket, pode-se utilizar o single_chpasswd.py. Sua finalidade é trocar a senha do usuário e enviá-la diretamente ao banco de dados.
